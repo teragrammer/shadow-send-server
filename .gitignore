@@ -1,0 +1,8 @@
+.env
+package-lock.json
+
+certs/*
+!certs/.gitkeep
+
+node_modules/
+.idea/
