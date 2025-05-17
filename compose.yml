@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    image: shadow-send/server:latest
+    container_name: shadow-send-server
+    tty: true
+    volumes:
+      - .:/app
+    ports:
+      - "${HOST_PORT}:${APP_PORT}"  # Exposing the ports using .env variables
+    environment:
+      - TZ=${TZ}  # Set the time zone from .env
