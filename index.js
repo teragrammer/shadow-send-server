@@ -61,7 +61,7 @@ if (process.env.HTTPS === 'true') {
 // Initialize Socket.IO on the HTTPS server
 const io = new Server(server, {
     cors: {
-        origin: "*", // client URL allowed to connect
+        origin: process.env.CORS.split(','), // client URL allowed to connect
     }
 });
 
