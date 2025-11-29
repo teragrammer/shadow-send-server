@@ -7,6 +7,8 @@ const {Server} = require("socket.io");
 const path = require("path");
 const multer = require("multer");
 const cors = require("cors");
+const helmet = require("helmet");
+const hpp = require("hpp");
 const crypto = require("crypto");
 
 // Load PEM files (certificate, key, and optional CA certificate)
@@ -19,6 +21,9 @@ const credentials = {key: privateKey, cert: certificate, ca: ca}; // If you have
 
 const app = express();
 
+app.use(helmet());
+app.use(hpp());
+app.disable("x-powered-by");
 app.use(cors({
     origin: process.env.CORS,
     credentials: true,
