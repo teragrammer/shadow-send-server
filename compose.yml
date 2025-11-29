@@ -10,3 +10,10 @@ services:
       - "${HOST_PORT}:${APP_PORT}"  # Exposing the ports using .env variables
     environment:
       - TZ=${TZ}  # Set the time zone from .env
+    networks:
+      - shadow-send-network
+
+networks:
+  shadow-send-network:
+    name: shadow-send-network
+    driver: bridge
