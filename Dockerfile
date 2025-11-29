@@ -28,7 +28,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # NODEJS
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && apt-get update && apt-get install -y nodejs && rm -rf /var/lib/apt/lists/*
+RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get update && apt-get install -y nodejs && rm -rf /var/lib/apt/lists/*
 # Verify that Node.js and npm were installed correctly
 RUN node -v
 RUN npm -v
